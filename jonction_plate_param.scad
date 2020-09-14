@@ -1,5 +1,5 @@
-rangees_longueur = 2;
-rangees_largeur = 2;
+rangees_longueur = 6;
+rangees_largeur =1;
 difference(){
 cube([rangees_longueur*8, rangees_largeur*8,4]);
 
