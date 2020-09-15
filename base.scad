@@ -1,14 +1,15 @@
 a = 104;
-rail = cube([a/10, 3, 4]);
+epaisseur = 2;
+rail = cube([a/10, 3, epaisseur]);
 //difference(){
 //difference(){
 //difference(){
     difference(){
        intersection(){
-            cube([a,a,4]);
+            cube([a,a,epaisseur]);
             translate([a/2,a/2,0]){
                 rotate(45){
-                    translate([-a/2,-a/2,0]){cube([a,a,4]);
+                    translate([-a/2,-a/2,0]){cube([a,a,epaisseur]);
                         };
                     };
                 };
@@ -35,9 +36,9 @@ translate([62,2,0]){cube([4,8,4]);}}}};
 for(i= [0 : (a)/(16)]){
 for(j= [0 : 2+(a/16 -i)]){
 union(){
-    translate([a/2 - 8*j,8*i+a/2,0]){cylinder(h=4,r=2);};
-    translate([a/2 - 8*j,a/2-8*i,0]){cylinder(h=4,r=2);};
-    translate([a/2 + 8*j,a/2+8*i,0]){cylinder(h=4,r=2);};
-    translate([a/2 + 8*j,a/2-8*i,0]){cylinder(h=4,r=2);};
+    translate([a/2 - 8*j,8*i+a/2,0]){cylinder(h=epaisseur,r=2);};
+    translate([a/2 - 8*j,a/2-8*i,0]){cylinder(h=epaisseur,r=2);};
+    translate([a/2 + 8*j,a/2+8*i,0]){cylinder(h=epaisseur,r=2);};
+    translate([a/2 + 8*j,a/2-8*i,0]){cylinder(h=epaisseur,r=2);};
     };
     };};};};
