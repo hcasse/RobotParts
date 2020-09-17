@@ -1,6 +1,6 @@
 epaisseur = 2;
-hauteur = 3;
-profondeur = 1;
+hauteur = 1;
+profondeur = 3;
 largeur = 3;
 difference(){
 difference(){
@@ -9,13 +9,6 @@ difference(){
         cube([largeur*8,profondeur*8+4,hauteur*8+4]);};
 };
 
-union(){
-    for(i=[0:largeur-1]){
-        for(j=[0:profondeur-1]){
-            translate([4+ 8*i, 8+8*j, 0]){cylinder(h=4, r=2);}
-            }
-        }
-    
     
     
 translate([0,4,0]){   
@@ -30,6 +23,6 @@ translate([0,4,0]){
     }
 }
 
-}
+
 }
 
