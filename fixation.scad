@@ -1,17 +1,20 @@
 nb_rangees = 4;
 epaisseur = 2;
 difference(){
-difference(){
-    cube([8*nb_rangees,10,11]);
-    translate([0, epaisseur, epaisseur]){
-        cube([8*nb_rangees,28,28]);};
-};
 
-translate([8,0,0]){
-    cube([16, 10, epaisseur]);
-    };
+    cube([8*nb_rangees,epaisseur,28]);
+
+
+
     
-
+union(){
+    translate([2, 0, 16]){
+        cube([4, epaisseur, 8]);
+        };
+    translate([7*nb_rangees-2, 0, 16]){
+        cube([4, epaisseur, 8]);
+        }
+    };
     
 translate([2.67,6,0]){
     cylinder(h=epaisseur, r=1.5);
