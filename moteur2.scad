@@ -9,12 +9,12 @@ difference(){
         cube([largeur*8,profondeur*8+4,hauteur*8+4]);};
 };
 
-translate([largeur*8-10, epaisseur,0]){cube([10, profondeur*8+4, hauteur*8+4]);};
-translate([8, 7, 0]){
+translate([0, epaisseur,0]){cube([10, profondeur*8+4, hauteur*8+4]);};
+translate([(largeur-1)*8, 7, 0]){
     cylinder(h=epaisseur, r=1.4);
     };  
     
-translate([8, 24.5, 0]){
+translate([(largeur-1)*8, 24.5, 0]){
     cylinder(h=epaisseur, r=1.4);
     };  
     
