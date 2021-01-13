@@ -22,6 +22,7 @@ The following pieces are available:
 * ``fixing_square`` - square designed to assemble ``barre_trouee.scad``
 * ``jonction_place_param.scad`` - straight fixation to assemble ``barre_trouee.scad``
 * ``moteur.scad``, ``moteur2.scad`` - left and right fixation for [Dagu DG01D CC motor](http://www.dagurobot.com/DG01D-L)
+* ``plate_square.scad`` - plate square to connect ``barre_trouee.scad``
 * ``rect_board.scad`` - rectangular board possibly used as base
 * ``sensor.scad`` - fixation for [Pololu 3-IR ramp sensor ](https://www.pololu.com/product/2456/resources)
 * ``wall.png`` - vertical structure to stack things (computer board, battery, etc)
