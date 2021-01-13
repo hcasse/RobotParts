@@ -4,14 +4,14 @@ epaisseur = 2;
 difference(){
 difference(){
     cube([largeur*8, 20, hauteur*8]);
-    translate([0,0,epaisseur]){
-        cube([largeur*8, 8, hauteur*8]);
+    translate([-1,-1,epaisseur]){
+        cube([largeur*8+2, 8+1, hauteur*8]);
     };
-    translate([0,8+epaisseur,24+epaisseur/2]){
-        cube([largeur*8, 8+epaisseur, 24+epaisseur/2]);
+    translate([-1,8+epaisseur,24+epaisseur/2]){
+        cube([largeur*8+2, 8+epaisseur+2, 24+epaisseur/2]);
     };
-    translate([0,8+epaisseur,0]){
-        cube([largeur*8, 8+epaisseur, 24-epaisseur/2]);
+    translate([-1,8+epaisseur,-1]){
+        cube([largeur*8+2, 8+epaisseur+2, 24-epaisseur/2+1]);
     };
 };
 
