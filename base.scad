@@ -36,9 +36,9 @@ translate([62,2,0]){cube([4,8,4]);}}}};
 for(i= [0 : (a)/(16)]){
 for(j= [0 : 2+(a/16 -i)]){
 union(){
-    translate([a/2 - 8*j,8*i+a/2,0]){cylinder(h=epaisseur,r=2);};
-    translate([a/2 - 8*j,a/2-8*i,0]){cylinder(h=epaisseur,r=2);};
-    translate([a/2 + 8*j,a/2+8*i,0]){cylinder(h=epaisseur,r=2);};
-    translate([a/2 + 8*j,a/2-8*i,0]){cylinder(h=epaisseur,r=2);};
+    translate([a/2 - 8*j,8*i+a/2,-1]){cylinder(h=epaisseur+2,r=2);};
+    translate([a/2 - 8*j,a/2-8*i,-1]){cylinder(h=epaisseur+2,r=2);};
+    translate([a/2 + 8*j,a/2+8*i,-1]){cylinder(h=epaisseur+2,r=2);};
+    translate([a/2 + 8*j,a/2-8*i,-1]){cylinder(h=epaisseur+2,r=2);};
     };
     };};};};
