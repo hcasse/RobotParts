@@ -22,7 +22,7 @@ difference() {
     cube([thickness, w, v]);
     for(i=[1,height]) {
         translate([-thickness, pad + hole/2, (hole + pad) * i + hole / 2]) {
-            rotate([]) {
+            rotate([0, 90, 0]) {
                 cylinder(h = thickness * 3, r = hole / 2);
             };
         };
