@@ -1,4 +1,4 @@
-longueur_trous = 20;
+longueur_trous = 10;
 difference(){
 cube([longueur_trous * 8, 8, 8]);
 

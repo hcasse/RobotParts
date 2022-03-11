@@ -1,24 +1,25 @@
 // configuration
-width = 5;      // in holes
-height = 8;    // in holes
-thickness = 2;  // in mm
-hole = 4;       // diameter in mm
-pad = 2;        // in mm
+width = 5;          // in holes
+height = 8;         // in holes
+thickness = 2;      // in mm
+hole = 4;           // diameter in mm
+space = 4;          // inter-hole space in mm
+pad = space / 2;    // in mm
 
 // pre-computation
-w = width * (hole + pad) + pad;
-h = height * (hole + pad) + pad;
+w = width*hole + (width-1)*space + 2*pad;
+h = height*hole + (height-1)*space + 2*pad;
 
 difference() {
     cube([w, h, thickness]);
-    for(i=[0:width-1]) {
-        for(j=[0:height-1]) {
+    for(i=[1:width]) {
+        for(j=[1:height]) {
             translate([
-                pad + hole/2 + (pad + hole) * i,
-                pad + + hole/2 + (pad + hole) * j,
+                i*hole + (i - 1)*space - hole/2 + pad,
+                j*hole + (j - 1)*space - hole/2 + pad,
                 -thickness
             ]) {
-                cylinder(h=3 * thickness, r=hole/2);
+                cylinder(h=3 * thickness, r=hole/2 + 0.2);
             }
         }
     }
