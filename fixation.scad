@@ -1,5 +1,13 @@
+// piece configuration
 nb_rangees = 4;
 epaisseur = 2;
+
+// home configuration
+hole = 4;
+space = 4;
+pad = space / 2;
+
+
 difference(){
 
     cube([8*nb_rangees,epaisseur,28]);

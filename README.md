@@ -10,7 +10,17 @@ Most of the pieces can configured with a few parameters at the start of the mode
 * ``height`` - height of the piece in number of holes
 * ``thickness`` - for board pieces, its thickness (in mm)
 * ``hole`` - diameter of the hole (in mm, default to 4mm)
+* ``space`` - inter-hole space (in mm, default to 4mm)
 * ``pad`` - the padding space around the hole or between the holes (in mm, default to 2mm)
+
+The following formula is applied to convert a number of points *n* into a size *s* in mm:
+
+    *s = n * hole + (n - 1) * space + 2 * pad*
+
+For converting a size *s* in mm into the closest bigger number of holes:
+
+    *n = ceil((s - 2*pad + space) / (hole + space))* 
+
 
 The following pieces are available:
 * ``angle.scad`` - plate angle for 3D assembly
