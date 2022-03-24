@@ -2,11 +2,15 @@
 space = 4;
 hole = 4;
 pad = space/2;
-left = true;
+left = false;
+
+// multiplier for hole size
+// 1.15 PLA
+hfix = 1.15;
 
 // motor size
-motor_length = 18.8;
-motor_width = 22.5;
+motor_length = 20;  // 18.8;
+motor_width = 23;   // 22.5;
 
 // distances between holes
 // 2 front holes - 1 back hole
@@ -68,7 +72,7 @@ difference() {
         ]) {
             rotate([0, 90, 0]) {
                 translate([0, 0, -(l + 2*pad)/2]) {
-                    cylinder(h=w + 2*pad, r=hole/2 + 0.2);
+                    cylinder(h=w + 2*pad, r=hole/2 * hfix);
                 };
             };
         };
@@ -88,7 +92,7 @@ difference() {
             ]) {
                 cylinder(
                     h=l + 2*pad,
-                    r=tie_hole/2 + 0.2
+                    r=tie_hole/2 * hfix
                 );
             };
         };
@@ -108,7 +112,7 @@ difference() {
             ]) {
                 cylinder(
                     h = l + 2*pad,
-                    r = tie_hole/2 + 0.2
+                    r = tie_hole/2 * hfix
                 );
             };
         };
@@ -130,7 +134,7 @@ difference() {
             ]) {
                 cylinder(
                     h = l + 2*pad,
-                    r = tie_hole/2 + 0.2
+                    r = tie_hole/2 * hfix
                 );
             };
         };

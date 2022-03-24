@@ -1,9 +1,12 @@
 // piece configuration
-nb_rangees = 4;
-height = 5;
+height = 8;
 width = 4;
 
-// home configuration
+// multiplier for hole size
+// 1.2 PLA
+hfix = 1.2;
+
+// family configuration
 hole = 4;
 space = 4;
 pad = space / 2;
@@ -32,27 +35,27 @@ difference(){
                     pad + (hole + space) * j + hole/2,
                     -thickness
                 ]) {
-                    cylinder(h=thickness * 3, r=hole/2);
+                    cylinder(h=thickness * 3, r=hole/2*hfix);
                 }
                 translate([
                     w - pad + (hole + space) * i - hole/2,
                     pad + (hole + space) * j + hole/2,
                     -thickness
                 ]) {
-                    cylinder(h=thickness * 3, r=hole/2);
+                    cylinder(h=thickness * 3, r=hole/2*hfix);
                 }
             }
         }
     }
     
     translate([pos, pad + hole/2, -thickness ]) {
-        cylinder(h=thickness * 3, r=hole/2);
+        cylinder(h=thickness * 3, r=hole/2*hfix);
     }
     translate([pos, h - pad - hole/2, -thickness ]) {
-        cylinder(h=thickness * 3, r=hole/2);
+        cylinder(h=thickness * 3, r=hole/2*hfix);
     }
     translate([pos - hole/2, pad + hole/2, -thickness]) {
-        cube([hole, h - pad*2 -hole, thickness*3]);
+        cube([hole*hfix, h - pad*2 -hole, thickness*3]);
     }
 
     
