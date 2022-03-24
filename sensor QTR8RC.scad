@@ -1,9 +1,13 @@
-// configuration
+// family configuration
 space=4;
 hole=4;
 pad=space / 2;
 fixdist=69.85;
 fixhole=3.2;
+
+// multiplier for hole size
+// 1.2 PLA
+hfix = 1.2;
 
 // internal
 width=ceil(ceil(fixdist - 2*pad + space) / (hole+space)/2)*2;
@@ -28,12 +32,12 @@ difference(){
 
     // low plate right hole
     translate([fixhole_center + fixhole / 2, 2*pad + fixhole/2, -pad]){
-        cylinder(h=3*pad, r=fixhole/2 + 0.2);
+        cylinder(h=3*pad*hfix, r=fixhole/2 + 0.2);
     };
 
     // low plate left hole
     translate([fixhole_center + fixhole / 2 + fixdist, 2*pad + fixhole/2, -pad]){
-        cylinder(h=3*pad, r=fixhole/2);
+        cylinder(h=3*pad*hfix, r=fixhole/2);
     };
     
     // vertical plate holes
@@ -42,7 +46,7 @@ difference(){
                 union() {
                     for(i=[0:width-1]) {
                         translate([pad + (hole + space)*i + hole/2, 0, -2*pad]) {
-                            cylinder(h=pad*4, r=hole/2);
+                            cylinder(h=pad*4*hfix, r=hole/2*1.2);
                         }
                     }
                 }

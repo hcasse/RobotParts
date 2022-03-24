@@ -1,18 +1,38 @@
-longueur_trous = 10;
+// configuration
+size = 3;        // number of holes
+
+
+// family configuration
+space = 4;
+hole = 4;
+pad = space/2;
+
+
+// multiplier for hole size
+// 1.2 PLA
+hfix = 1.2;
+
+
+// script
+l = pad*2 + hole*size + space*(size - 1);
+w = pad*2 + hole;
+h = pad*2 + hole;
+
 difference(){
-cube([longueur_trous * 8, 8, 8]);
+//union() {
+cube([l, w, h]);
 
 
 union(){
-    for(i=[0:longueur_trous]){
-        translate([4+8*i, 4,-1]){
-                cylinder(h=10, r=2);
+    for(i=[0:size-1]){
+        translate([pad +i*(hole + space) + hole/2, pad + hole/2, -pad]){
+                cylinder(h=h + 2*pad, r=hole/2*hfix);
             }
         };
-    for(i=[0:longueur_trous]){
-        translate([4+8*i, 9,4]){
+    for(i=[0:size-1]){
+        translate([pad + (hole + space)*i + hole/2, w+pad, pad + hole/2]){
             rotate([90,0,0]){
-                cylinder(h=10, r=2);
+                cylinder(h=h + 2*pad, r=hole/2*hfix);
             }
             }
         }
