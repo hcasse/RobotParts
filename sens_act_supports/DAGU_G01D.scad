@@ -29,7 +29,7 @@ module DAGU_G01D(left = false) {
     w = motor_width + pad + pad + hole + pad + pad;
     tie_offset = (motor_width - front_hole_dist)/2 + pad;
     mw = motor_width + pad;
-
+    iw = (hole + 2*pad)*ufix;
 
     difference() {
         cube([l, w, h]);
@@ -40,13 +40,13 @@ module DAGU_G01D(left = false) {
         };
 
         // bar hollow
-        bar_offx = left ? pad : (l - 3*pad - hole);
+        bar_offx = left ? thickness : (l - iw - thickness);
         translate([bar_offx, w - hole - 2*pad, -pad]) {
-            cube([hole+2*pad, hole+3*pad, h + 2*pad]);
+            cube([iw, hole+3*pad, h + 2*pad]);
         };
 
         // outside bar hollow
-        hollow_offx = left ? hole + 4*pad : -pad;
+        hollow_offx = left ? iw + 2*thickness : -thickness;
         translate([
             hollow_offx,
             w - hole - 2*pad,
@@ -54,7 +54,7 @@ module DAGU_G01D(left = false) {
         ]) {
             cube([
                 l - hole - 3*pad,
-                hole+3*pad,
+                w - iw - 3*thickness,
                 h + 2*pad]
             );
         };
@@ -165,6 +165,6 @@ module DAGU_G01D(left = false) {
     };
 }
 
-DAGU_G01D();
+DAGU_G01D(left = false);
 
 
