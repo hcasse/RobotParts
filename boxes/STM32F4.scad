@@ -36,7 +36,7 @@ module STM32F4() {
             translate([
                 i*(hole+space) + pad + hole/2,
                 w/2,
-                3*pad + hole/2
+                3*pad + hole/2 + offset
             ]) {
                 rotate([90, 0, 0]) {
                     translate([0, 0, -w/2 -pad]) {
