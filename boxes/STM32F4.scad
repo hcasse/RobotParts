@@ -1,7 +1,8 @@
 include <../config.scad>
 
 module STM32F4() {
-
+    $fa = 1;
+    $fs = 0.4;
     length = 13;
     width = 10;
 

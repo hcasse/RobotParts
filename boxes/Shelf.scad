@@ -3,6 +3,7 @@ include <../config.scad>
 module Shelf(width = 6, depth = 4) {
     $fa = 1;
     $fs = 0.4;
+    r = hole/2*hfix;
 
     l = width*hole + (width-1)*space + 2*pad;
     w = depth*hole + (depth-1)*space + 2*pad;
@@ -27,7 +28,7 @@ module Shelf(width = 6, depth = 4) {
             ]) {
                 rotate([90, 0, 0]) {
                     translate([0, 0, -w/2 -pad]) {
-                        cylinder(h=w + 2*pad, r=hole/2 + 0.2);
+                        cylinder(h=w + 2*pad, r=r);
                     };
                 };
             };
