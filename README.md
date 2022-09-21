@@ -26,7 +26,7 @@ For now, only `M4.scad`is provided but more will be added later.
 
 2. To build a model _MODEL_ , type the following **OpenScad** code:
 ```
-import <MODEL_DIRECTORY/MODEL.scad>
+use <MODEL_DIRECTORY/MODEL.scad>
 
 MODEL(PARAM1=VALUE1, PARAM2=VALUE2, ...);
 ```
