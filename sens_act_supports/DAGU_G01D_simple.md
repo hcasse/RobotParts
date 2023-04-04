@@ -1,6 +1,6 @@
 Provides re-enforced support for DC motors of type DAGU-G01D.
 
-![image](DAGU_G01D.png)
+![image](DAGU_G01D_simple.png)
 
 # Parameters
 
