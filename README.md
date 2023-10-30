@@ -40,14 +40,6 @@ MODEL(PARAM1=VALUE1, PARAM2=VALUE2, ...);
 Now you can use all options of **OpenSCad** to generate your STL output
 and to play with parameters.
 
-
-
-
-
-
-
-
-
 Most of the pieces can configured with a few parameters at the start of the model source:
 * ``width`` - width of the piece in number of holes
 * ``height`` - height of the piece in number of holes
@@ -58,24 +50,28 @@ Most of the pieces can configured with a few parameters at the start of the mode
 
 The following formula is applied to convert a number of points *n* into a size *s* in mm:
 
-    *s = n * hole + (n - 1) * space + 2 * pad*
+    _s = n * hole + (n - 1) * space + 2 * pad_
 
 For converting a size *s* in mm into the closest bigger number of holes:
 
-    *n = ceil((s - 2*pad + space) / (hole + space))* 
+    _n = ceil((s - 2*pad + space) / (hole + space))_ 
+
+Lots of pieces are available in different directories:
+* `boxes` -- different boxes perforated or not,
+* `micro` -- support boards for micro-controllers,
+* `sens_act_supports` -- support for sensors and actuators,
+* `structure` -- structural pieces. 
+
+For each piece, a PNG file provides an overview of the piece, a `.md` markdown file describes the piece and its parameters, and finally the  `.scad file is provided.
 
 
-The following pieces are available:
-* ``angle.scad`` - plate angle for 3D assembly
-* ``barre_trouee.scad`` - bar for robot skeleton
-* ``base.scad`` - octogonal base board
-* ``box.scad`` - simple open box (no hole)
-* ``butee.scad`` - square piece to block something (computer board, battery, etc)
-* ``fixation.scad`` - vertical fixation provided free position selection using screws
-* ``fixing_square`` - square designed to assemble ``barre_trouee.scad``
-* ``jonction_place_param.scad`` - straight fixation to assemble ``barre_trouee.scad``
-* ``moteur.scad``, ``moteur2.scad`` - left and right fixation for [Dagu DG01D CC motor](http://www.dagurobot.com/DG01D-L)
-* ``plate_square.scad`` - plate square to connect ``barre_trouee.scad``
-* ``rect_board.scad`` - rectangular board possibly used as base
-* ``sensor.scad`` - fixation for [Pololu 3-IR ramp sensor ](https://www.pololu.com/product/2456/resources)
-* ``wall.png`` - vertical structure to stack things (computer board, battery, etc)
+# Additional directories
+
+* `extern` -- STL modles of sensors, actuators and microcontrollers which support is given,
+* `configs` -- configuration files.
+
+
+# Documentation
+
+* [OpenSCAD Cheat Sheet](https://openscad.org/cheatsheet/index.html)
+
